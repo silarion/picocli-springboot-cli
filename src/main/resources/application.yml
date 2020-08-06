@@ -1,0 +1,18 @@
+spring:
+  application:
+    name: picocli-springboot-cli
+  main:
+    web-application-type: none
+    banner-mode: "off"
+
+logging:
+  file: 
+    name: work/${spring.application.name}.log
+    max-history: 10
+  pattern:
+    file: "%date{ISO8601} ${COMPUTERNAME:${HOSTNAME}} %-5level ${spring.application.name} %mdc{bu}${bu:} [%thread] [%mdc{Glue-Code}] %logger user=%mdc{user} - %msg%n"
+    console: "[%level] %msg%n"
+
+inputHeaders: header1,header2,header3
+
+inputSeparator: ","
